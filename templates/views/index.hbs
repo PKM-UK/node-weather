@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="./css/styles.css">
+        <link rel="icon" href="/img/weather.png">
+        <title>Weather</title>
+        </head>
+        
+<body>
+    <div class="main-content"> <!-- All page content except footer -->
+    {{>header}}
+    <p>This is {{name}}'s page about the weather</p>
+
+    <form>
+        <input placeholder="Location">
+        <button>Search</button>
+    </form>
+
+    
+    <p id="message-1"></p>
+    
+    <p id="message-2"></p>
+
+    </div>
+{{>footer}}
+
+<!-- Who needs document.onComplete? -->
+<script src="/js/frontend.js"></script>
+</body>
+</html>
