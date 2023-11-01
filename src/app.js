@@ -49,8 +49,7 @@ app.get('/weather', (req, res) => {
         forecast(latitude, longitude, (error, fcdata) => {
             if (error) {
                 return res.send(error)
-            }
-            console.log(fcdata)            
+            }       
             res.send({
                 location: req.query.address,
                 forecast: fcdata
