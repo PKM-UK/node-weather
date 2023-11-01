@@ -5,6 +5,8 @@ const forecast = require('./utils/forecast')
 const geocode = require('./utils/geocode')
 
 const app = express()
+console.log('process.env.PORT says ' + process.env.PORT + ' is the port')
+const port = process.env.PORT || 3000
 
 // Server paths
 const publicDirPath = path.join(__dirname, '../public')
@@ -109,7 +111,8 @@ app.get('*', (req, res) => {
 // Create a new view for the 404 page including the header and footer partials
 // also render a provided help message which depends on routing
 
-// ...and actually start the server (on :3000 which is "a common development port")
-app.listen(3000, () => {
-    console.log('Server is up on 3000')
+// ...and actually start the server (for development, on :3000 which is "a common development port")
+// on the port specified in the environment for deployment
+app.listen(port, () => {
+    console.log('Server is up on ' + port)
 })
